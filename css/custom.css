@@ -1,0 +1,172 @@
+body {
+  background-color: white;
+}
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+   opacity: 0.7;
+}
+.nav-link {
+  color: white;
+}
+.carousel-item {
+  height: 100%;
+  width: 100%;
+}
+.carousel {
+  position: relative;
+  top: -100px;
+  z-index: -1;
+  width: 100%;
+  max-height: 100%;
+  background-color: black;
+}
+
+.about{
+  background-color: white;
+  margin-bottom: 50px;
+}
+.thumbnail {
+  width: 100%;
+  height: 100%;
+}
+
+.black {
+  position: absolute;
+  top: 0;
+  background-color: black;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  display: none;
+}
+.thumbnail-container {
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 220px;
+  position: relative;
+  height: 220px;
+  width: 330px;
+}
+.thumbnail-text {
+  margin-top: 30px;
+}
+
+@media(max-width: 1200px){
+  .thumbnail-container {
+    width: 100%;
+  }
+  .thumbnail {
+    width: 100%;
+  }
+}
+@media(max-width: 991px){
+  .thumbnail-container {
+    height: 160px;
+    line-height: 160px;
+  }
+}
+@media(max-width: 767px){
+  .thumbnail-container {
+    height: 300px;
+    line-height: 300px;
+  }
+}
+.fullWidthContainer {
+  width: 100%;
+  position: relative;
+  margin-bottom: 70px;
+}
+.fullWidthContainer_2 {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.fullSizeImage {
+  width: 100%;
+}
+.red {
+  background-color: #19A6AF;
+}
+
+.textInBlueContaier {
+  color: white;
+  position: absolute;
+  top: 30%;
+  font-size: 1.5em;
+  left: 20%;
+}
+.recentWorks {
+  text-align: center;
+}
+.recentWorks a {
+  color: #585858;
+}
+.recentWorks a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+.grid {
+  background-color: black;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.noPaddingOfColumn {
+  padding-left: 0;
+  padding-right: 0;
+}
+.fullHeightImage {
+  height: 100%;
+}
+.grid-item {
+  height: 100%;
+  color : white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100%;
+}
+.footer-2 {
+  margin: 0;
+  padding: 0;
+  background-color: #242424;
+  color: white;
+  position: relative;
+  /*top: -70px;*/
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-bottom: 0;
+}
+.footer {
+  background-color: black;
+  height: 100px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 25px;
+  color: #D5D5D5;
+}
+.logo {
+  height: 30px;
+}
+body{
+  padding-bottom: 0;
+}
+.coverImage{
+  width: 100%;
+  position: relative;
+  top: -100px;
+  z-index: -1;
+  height: 100%;
+}
+.coverImageItem {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+}
+.coverBackground {
+  position: relative;
+  top: -62px;
+}
