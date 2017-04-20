@@ -1,4 +1,6 @@
 body {
+  overflow-x: hidden;
+  overflow-y: scroll;
   background-color: white;
 }
 .navbar {
@@ -41,6 +43,7 @@ body {
   width: 100%;
   z-index: 2;
   display: none;
+  overflow: hidden;
 }
 .thumbnail-container {
   color: white;
@@ -93,10 +96,11 @@ body {
 
 .textInBlueContaier {
   color: white;
-  position: absolute;
-  top: 30%;
+  position: relative;
+  top: 100px;
   font-size: 1.5em;
-  left: 20%;
+  left: 0;
+
 }
 .recentWorks {
   text-align: center;
@@ -157,16 +161,147 @@ body{
   position: relative;
   top: -100px;
   z-index: -1;
-  height: 100%;
+  height: 100vh;
 }
 .coverImageItem {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 .coverBackground {
   position: relative;
   top: -62px;
+}
+
+.textInImage {
+  position: absolute;
+  top: 200px;
+  text-align: center;
+  color: white;
+  width: 80%;
+  left: 10%;
+  font-size: 1.5em;
+  display: none;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+h1 {
+  font-family: 'Josefin Slab', serif;
+  font-size: 3.5em;
+  font-weight: 700;
+}
+#para1 {
+
+  font-weight: 400;
+  font-size: 1.7em;
+}
+
+#para2{
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+@media (max-width: 1091px) {
+  .coverImage{
+    width: 100%;
+    position: relative;
+    top: -100px;
+    z-index: -1;
+    height: 90vh;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+  #para1 {
+    font-size: 1.2em;
+  }
+  #para2{
+    font-size: 0.8em;
+  }
+  .textInImage {
+    top: 150px;
+    font-size: 1em;
+  }
+  .textInBlueContaier {
+    text-align: center;
+    left: 0;
+    top: 30px;
+    font-size: 1.1em;
+
+  }
+}
+
+@media (max-width: 891px) {
+  .coverImage{
+    width: 100%;
+    position: relative;
+    top: -100px;
+    z-index: -1;
+    height: 80vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .textInBlueContaier {
+    height: 300px;
+  }
+}
+
+@media (max-width: 691px) {
+  .coverImage{
+    width: 100%;
+    position: relative;
+    top: -100px;
+    z-index: -1;
+    height: 60vh;
+  }
+  .textInImage {
+    position: absolute;
+    top: 70px;
+    text-align: center;
+    color: white;
+    width: 80%;
+    left: 10%;
+    font-size: 0.8em;
+    display: none;
+  }
+  .textInBlueContaier {
+    top: 50px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 575px) {
+  .textInBlueContaier {
+    width: 80%;
+    left: 10%;
+  }
+}
+@media (max-width: 491px) {
+  .coverImage{
+    width: 100%;
+    position: relative;
+    top: -100px;
+    z-index: -1;
+    height: 50vh;
+  }
+  .textInImage {
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    color: white;
+    width: 80%;
+    left: 10%;
+    font-size: 0.7em;
+    display: none;
+  }
+
+  /*.textInBlueContaier {
+    font-size: 0.7em;
+  }*/
 }

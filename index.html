@@ -3,47 +3,47 @@
   <head>
     <meta charset="utf-8">
     <title>DTU Times</title>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400|Josefin+Slab:700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <link rel="stylesheet" type = "text/css" href="css/custom.css">
     <style media="screen">
-      body {
-        font-family: 'Josefin Sans', sans-serif;
-      }
-      h1 {
-        font-size: 3.5em;
-        font-weight: 700;
-      }
-      #para1 {
 
-        font-weight: 400;
-        font-size: 1.7em;
-      }
-      #para2{
-        font-weight: 300;
-        font-size: 1.2em;
-      }
       .imageWithTextInside {
 
       }
-      .textInImage {
-        position: absolute;
-        top: 200px;
-        text-align: center;
-        color: white;
-        width: 80%;
-        left: 10%;
-        font-size: 1.5em;
-        display: none;
-      }
-      #img2, #img3, #point1, #point2, #point3 {
+
+      #point1, #point2, #point3 {
         display: none;
 
       }
       /*#img3 {
         display: none;
       }*/
+
+      #img1 {
+        position: absolute;
+        z-index: 0;
+      }
+      #img2 {
+        position: absolute;
+        z-index: 1;
+      }
+      #img3 {
+        position: absolute;
+        z-index: 2;
+      }
+
+      .itemContainer {
+        height: 400px;
+        position: relative;
+      }
+      .gridImage {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        overflow: hidden;
+      }
 
 
     </style>
@@ -107,7 +107,7 @@
       <div class="coverImage black">
 
       </div>
-      <img src="img/black.jpg" alt="" class = "fullSizeImage coverBackground">
+      <img src="img/black.jpg" alt="" class = "fullSizeImage coverBackground coverImageItem">
       <img src="img/1.jpg" alt="" class = "fullSizeImage coverImageItem" id = "img1">
       <img src="img/2.jpg" alt="" class = "fullSizeImage coverImageItem" id = "img2">
       <img src="img/3.jpg" alt="" class = "fullSizeImage coverImageItem" id = "img3">
@@ -155,8 +155,8 @@
       <img src="img/4.jpg" alt="" class="fullWidthContainer imageWithTextInside">
       <div class="textInImage">
         <p id = "para1">Time Magazine Writes</p>
-        <p>Creativity redefined. These guys offer a unique approach to every aspect of design and the result is simply stunning.</p>
-        <p>Jane Lariken - Times Editor in chief.</p>
+        <p id = "para2">Creativity redefined. These guys offer a unique approach to every aspect of design and the result is simply stunning.</p>
+        <p id = "para2">Jane Lariken - Times Editor in chief.</p>
       </div>
     </div>
 
@@ -190,13 +190,13 @@
       <div class="row">
         <div class="col-md-6">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
             </div>
             <div class="col-sm-6 textInBlueContaier">
               <p>Case Study - Macaw Mobile App</p>
               <p>We recently restructured Macaws strategy which lead to an increase in sales and traffic for the brand. Downloads and turnover skyrocketed.</p>
             </div>
-            <div class="col-sm-2 ">
+            <div class="col-sm-3 ">
             </div>
           </div>
         </div>
@@ -293,6 +293,61 @@
       </div>
     </div> -->
 
+    <div class="grid fullWidthContainer">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-4 itemContainer">
+              <div class="black">
+
+              </div>
+              <img src="img/grid/1.jpg" class = "gridImage" alt="">
+            </div>
+            <div class="col-md-8 itemContainer">
+              <div class="black">
+
+              </div>
+              <img src="img/grid/2.jpg" class = "gridImage" alt="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 itemContainer">
+              <div class="black">
+
+              </div>
+              <img src="img/grid/3.jpg" class = "gridImage" alt="">
+            </div>
+            <div class="col-md-6 itemContainer">
+              <div class="black">
+
+              </div>
+              <img src="img/grid/4.jpg" class = "gridImage" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 itemContainer" style="height: 800px;">
+          <div class="black">
+
+          </div>
+          <img src="img/grid/5.jpg" class = "gridImage" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 itemContainer">
+          <div class="black">
+
+          </div>
+          <img src="img/grid/6.jpg" class = "gridImage" alt="">
+        </div>
+        <div class="col-md-6 itemContainer">
+          <div class="black">
+
+          </div>
+          <img src="img/grid/7.jpg" class = "gridImage" alt="">
+        </div>
+      </div>
+    </div>
+
 
     <div class="fullWidthContainer footer-2">
       <div class="row">
@@ -340,16 +395,34 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){
-        $('.carousel').carousel({
-          interval: 4000
-        })
+
+      $(".gridImage").each(function(){
+        var x = $(this).parent().width();
+        var y = $(this).parent().height();
+
+        var mx = $(this).width();
+        var my = $(this).height();
+
+        if((x/y) > (mx/my)) {
+          $(this).width(x);
+        }
+        else {
+          $(this).height(y);
+        }
       });
+
+      $(".itemContainer").hover(function(){
+        $(this).children('.black').fadeIn();
+
+      }, function(){
+        $(this).children('.black').fadeOut();
+
+      });
+
 
       $('.thumbnail-container').hover(function(){
         $(this).children('.black').fadeIn();
-      });
-      $('.thumbnail-container').mouseleave(function(){
+      }, function(){
         $(this).children('.black').fadeOut();
       });
 
@@ -372,39 +445,27 @@
         }
       });
 
-      $('.grid-item').hover(function() {
-        $(this).children('.black').fadeIn();
-      });
-      $('.grid-item').mouseleave(function() {
-        $(this).children('.black').fadeOut();
-      });
-
       function myLoop(i) {
         var delay = 4000;
         i++;
-        console.log(i);
         switch (i % 3) {
           case  0:
-            $("#img1").fadeIn();
-            $("#img2").css("display", "none");
-            $("#img3").css("display", "none");
-            console.log("first");
+
+            $('#img1').fadeOut();
+            $('#img2').fadeIn();
             break;
           case 1:
-            $("#img1").css("display", "none");
-            $("#img2").fadeIn();
-            $("#img3").css("display", "none");
-            console.log("second");
+            $('#img2').fadeOut();
+            $('#img3').fadeIn();
             break;
           case 2:
-            $("#img1").css("display", "none");
-            $("#img2").css("display", "none");
-            $("#img3").fadeIn();
-            console.log("third");
+            $('#img3').fadeOut();
+            $('#img1').fadeIn();
             break;
           default:
 
         }
+
         setTimeout(function() {myLoop(i);}, delay);
 
       }
